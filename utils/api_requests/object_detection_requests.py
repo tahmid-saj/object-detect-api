@@ -17,8 +17,9 @@ def request_object_detection(request):
   r = requests.post(api_url, files=files, headers=headers)
   
   resObjects = r.json()
+  print(resObjects)
   if resObjects:
     resObjectDetected = resObjects[0]["label"]
     return resObjectDetected
   else:
-    return None
+    return ""

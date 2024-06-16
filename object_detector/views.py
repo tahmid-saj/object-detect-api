@@ -14,6 +14,7 @@ class ObjectDetectionResponse(APIView):
   # permission_classes = [AdminOrReadOnly]
   
   def post(self, request):
+    print(request.data)
     response = get_object_detection_response(request=request)
     
     return Response(data=response)
